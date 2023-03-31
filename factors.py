@@ -23,6 +23,7 @@ def main():
     file_name = sys.argv[1]
     file = open(file_name, "r")
     num_list = file.readlines()
+    file.close()
 
     for num in num_list:
         fact1 = factorise(int(num.rstrip('\n')))
