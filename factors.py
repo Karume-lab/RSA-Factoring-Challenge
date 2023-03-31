@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import sys
+import time
 
 
 def factorise(num):
-    """factorise a number into two factors
+    """Factorise a number into two factors
     Args:
             num: number to be factorised
     Returns:
@@ -19,8 +20,9 @@ def main():
     """Entry point
     Returns:
             None
-	"""
-    file_name = sys.argv[1]
+    """
+    start_time = time.time() # measure start time
+    file_name = "test.txt"
     file = open(file_name, "r")
     num_list = file.readlines()
 
@@ -28,6 +30,9 @@ def main():
         fact1 = factorise(int(num.rstrip('\n')))
         fact2 = int(num) // fact1
         print("{} = {} * {}".format(num.rstrip('\n'), fact1, fact2))
+
+    end_time = time.time() # measure end time
+    print("Runtime: {:.2f} seconds".format(end_time - start_time))
 
 
 if __name__ == "__main__":
