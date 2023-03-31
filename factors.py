@@ -20,14 +20,14 @@ def main():
     Returns:
             None
     """
-    file_name = "test.txt"
+    file_name = sys.argv[1]
     file = open(file_name, "r")
     num_list = file.readlines()
 
     for num in num_list:
         fact1 = factorise(int(num.rstrip('\n')))
         fact2 = int(num) // fact1
-        print("{} = {} * {}".format(num.rstrip('\n'), fact1, fact2))
+        print("{}={}*{}".format(num.rstrip('\n'), fact2, fact1))
 
 
 if __name__ == "__main__":
